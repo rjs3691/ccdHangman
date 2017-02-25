@@ -289,9 +289,20 @@ while 1:
 							clueWord[wordIndex] = True
 							occurances = occurances + 1
 						if clueWord[wordIndex] == True:
-							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+						#Fix here set up like other pyfont.render_to calls
+							if(wordIndex < 10):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+							elif(wordIndex < 20):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+							else:
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 105), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
 						else:
-							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							if(wordIndex < 10):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							elif(wordIndex < 20):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							else:
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)),105), '_ ', bgcolor=None, style=0,rotation=0, size=24)
 						wordIndex = wordIndex + 1
 					guessPromptRect = guessPromptRect.move([10, 275])
 					confirmGuessPrompt = pygame.image.load('promptConfirmGuess.png')
@@ -398,9 +409,19 @@ while 1:
 						clueWord[wordIndex] = True
 						occurances = occurances + 1
 					if clueWord[wordIndex] == True:
-						guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+						if(wordIndex < 10):
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+						elif(wordIndex < 20):
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+						else:
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 105), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
 					else:
-						guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+						if(wordIndex < 10):
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+						elif(wordIndex < 20):
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+						else:
+							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 105), '_ ', bgcolor=None, style=0,rotation=0, size=24)
 					wordIndex = wordIndex + 1
 				guessPromptRect = guessPromptRect.move([10, 275])
 			
@@ -423,9 +444,19 @@ while 1:
 							statUpdate = True
 							occurances = occurances + 1
 						if clueWord[wordIndex] == True:
-							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+							if(wordIndex < 10):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+							elif(wordIndex < 20):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
+							else:
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 105), word[wordIndex], bgcolor=None, style=0,rotation=0, size=24)
 						else:
-							guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * wordIndex), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							if(wordIndex < 10):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 25), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							elif(wordIndex < 20):
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 65), '_ ', bgcolor=None, style=0,rotation=0, size=24)
+							else:
+								guessPromptRect = pyFont.render_to(guessPrompt, (10+(25 * (wordIndex%10)), 105), '_ ', bgcolor=None, style=0,rotation=0, size=24)
 						guessPromptRect = guessPromptRect.move([10, 275])
 						wordIndex = wordIndex + 1
 					if(not confirmed):
